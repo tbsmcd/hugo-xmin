@@ -1,5 +1,9 @@
 {{ partial "header.html" . }}
 
+<header>
+{{ if (gt .Params.date 0) }}<p>{{ .Site.Title }} /</p>{{ end }}
+</header>
+
 <h1>{{ .Title }}</h1>
 
 <ul class="terms">
