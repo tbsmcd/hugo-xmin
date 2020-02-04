@@ -10,4 +10,11 @@
 {{ .Content }}
 </main>
 
+<hr>
+
+Tags: 
+{{ range .Params.tags }}
+ <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+{{ end }}
+
 {{ partial "footer.html" . }}
