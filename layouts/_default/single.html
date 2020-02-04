@@ -1,6 +1,6 @@
 {{ partial "header.html" . }}
 <header>
-{{ if (gt .Params.date 0) }}<p>{{ .Site.Title }}/{{ .Date.Format "2006-01-02" }}</p>{{ end }}
+{{ if (gt .Params.date 0) }}<p>{{ .Site.Title }} / {{ .Date.Format "2006-01-02" }}</p>{{ end }}
 </header>
 <main>
 <div>
