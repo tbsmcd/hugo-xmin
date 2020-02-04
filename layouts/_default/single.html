@@ -10,10 +10,6 @@
 </main>
 
 <p>
-Archives: 
-{{ range .Params.archives }}
-<a href="{{ "/archives/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-{{ end }}, 
 Tags: 
 {{ range .Params.tags }}
  <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
