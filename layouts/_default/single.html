@@ -9,9 +9,14 @@
 {{ .Content }}
 </main>
 
-Tags: 
+<p>Tags: 
 {{ range .Params.tags }}
  <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-{{ end }}
+{{ end }}</p>
+
+<p>
+{{ range .Params.archives }}
+ <a href="{{ "/archives/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+{{ end }}</p>
 
 {{ partial "footer.html" . }}
