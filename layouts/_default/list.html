@@ -1,5 +1,9 @@
 {{ partial "header.html" . }}
 
+<header>
+{{ if (gt .Params.date 0) }}<p>{{ .Site.Title }} /</p>{{ end }}
+</header>
+
 {{if not .IsHome }}
 <h1>{{ .Title | markdownify }}</h1>
 {{ end }}
