@@ -1,7 +1,9 @@
 {{ partial "header.html" . }}
+<header>
+{{ if (gt .Params.date 0) }}<p>{{ .Site.Title }}/{{ .Date.Format "2006-01-02" }}</p>{{ end }}
+</header>
 <main>
 <div>
-{{ if (gt .Params.date 0) }}<p class="date">{{ .Date.Format "2006-01-02" }}</p>{{ end }}
 <h1><span class="title">{{ .Title | markdownify }}</span></h1>
 </div>
 {{ .Content }}
