@@ -3,9 +3,6 @@
 {{ if (gt .Params.date 0) }}<p class="date">{{ .Date.Format "2006-01-02" }}</p>{{ end }}
 <h1><span class="title">{{ .Title | markdownify }}</span></h1>
 </div>
-
-<hr>
-
 <main>
 {{ .Content }}
 </main>
