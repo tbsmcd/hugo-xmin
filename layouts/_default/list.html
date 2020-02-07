@@ -5,7 +5,7 @@
 </header>
 
 {{if not .IsHome }}
-<h1>{{ .Title | markdownify }}</h1>
+<h1><span class="title">{{ .Title | markdownify }}</span></h1>
 {{ end }}
 
 {{ .Content }}
