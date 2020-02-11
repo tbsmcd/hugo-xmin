@@ -10,13 +10,17 @@
 
 {{ .Content }}
 
-
-{{ $pages := .Pages }}
-{{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
-{{ range (where $pages "Section" "!=" "") }}
-    <p class="list-date">{{ .Date.Format "2006-01-02" }}</p>
-    <p><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></p>
-{{ end }}
-
+<ul>
+  {{ $pages := .Pages }}
+  {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
+  {{ range (where $pages "Section" "!=" "") }}
+  <li>
+    <span class="list-date">{{ .Date.Format "2006-01-02" }}</span>
+    <ul>
+        <li><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></li>
+    </ul>
+  </li>
+  {{ end }}
+</ul>
 
 {{ partial "footer.html" . }}
