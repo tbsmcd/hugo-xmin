@@ -13,7 +13,8 @@
 <ul>
   {{ $pages := .Pages }}
   {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
-  {{ range (where $pages "Section" "!=" "") }}
+  {{ $paginator := .Paginate (where $pages "Section" "!=" "") 2 }}
+  {{ range $paginator.Pages }}
   <li>
     <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
     <br>
@@ -21,5 +22,7 @@
   </li>
   {{ end }}
 </ul>
+
+{{ template "_internal/pagination.html" . }}
 
 {{ partial "footer.html" . }}
