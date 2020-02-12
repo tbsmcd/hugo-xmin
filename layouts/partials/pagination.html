@@ -1,10 +1,10 @@
 {{ $pag := $.Paginator }}
 {{ if gt $pag.TotalPages 1 }}
     {{ with $pag.First }}
-        <a href="{{ .URL }}" class="page-link" aria-label="First"><span aria-hidden="true">First</span></a> 
+        <a href="{{ .URL }}" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a> 
     {{ end }}
     <span class="page-item{{ if not $pag.HasPrev }} disabled{{ end }}">
-    <a {{ if $pag.HasPrev }}href="{{ $pag.Prev.URL }}"{{ end }} class="page-link" aria-label="Previous"><span aria-hidden="true">Prev.</span></a> 
+    <a {{ if $pag.HasPrev }}href="{{ $pag.Prev.URL }}"{{ end }} class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a> 
     </span>
     {{ $ellipsed := false }}
     {{ $shouldEllipse := false }}
@@ -26,11 +26,11 @@
     {{ end }}
     {{ end }}
     <span class="page-item{{ if not $pag.HasNext }} disabled{{ end }}">
-    <a {{ if $pag.HasNext }}href="{{ $pag.Next.URL }}"{{ end }} class="page-link" aria-label="Next"><span aria-hidden="true">Next</span></a> 
+    <a {{ if $pag.HasNext }}href="{{ $pag.Next.URL }}"{{ end }} class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a> 
     </span>
     {{ with $pag.Last }}
     <span class="page-item">
-        <a href="{{ .URL }}" class="page-link" aria-label="Last"><span aria-hidden="true">Last</span></a>
+        <a href="{{ .URL }}" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </span>
     {{ end }}
 {{ end }}
