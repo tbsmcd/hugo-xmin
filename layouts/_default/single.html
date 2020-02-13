@@ -14,7 +14,7 @@
 Tags: 
 {{ range .Params.tags }}
  <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-</p>
 {{ end }}
+</p>
 {{ end }}
 {{ partial "footer.html" . }}
