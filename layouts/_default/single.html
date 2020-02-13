@@ -2,7 +2,7 @@
 <main>
 <h1>{{ .Title | markdownify }}</h1>
 {{ if (gt .Params.date 0) }}
-<p>
+<p class="article-date">
 {{ .Date.Format "2006-01-02" }}
 </p> 
 {{ end }}
