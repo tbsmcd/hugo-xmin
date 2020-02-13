@@ -1,19 +1,20 @@
 {{ partial "header.html" . }}
 <main>
 <h1>{{ .Title | markdownify }}</h1>
+{{ if (gt .Params.date 0) }}
+<p>
+{{ .Date.Format "2006-01-02" }}
+</p> 
+{{ end }}
 {{ .Content }}
 </main>
 
-<p>
 {{ if .Params.tags }}
+<p>
 Tags: 
 {{ range .Params.tags }}
  <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-{{ end }}
-
-{{ else }}
-No tags on this page.
-{{ end }}
 </p>
+{{ end }}
 
 {{ partial "footer.html" . }}
