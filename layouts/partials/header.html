@@ -15,9 +15,9 @@
   
   <header>
   <p>
+    {{ .Site.Title }}: 
     {{ with .Site.Params.header }}
     {{ . | markdownify }}
     {{ end }}  
   </p>
-  <p>{{ .Site.Title }}</p>
   </header>
