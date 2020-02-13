@@ -1,7 +1,4 @@
 {{ partial "header.html" . }}
-<header>
-<p>{{ .Site.Title }} / {{ if (gt .Params.date 0) }}{{ .Date.Format "2006-01-02" }}{{ end }}</p>
-</header>
 <main>
 <h1>{{ .Title | markdownify }}</h1>
 {{ .Content }}
