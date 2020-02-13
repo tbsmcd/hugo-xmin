@@ -13,10 +13,8 @@
 
   <body>
   
+  {{ with .Site.Params.header }}
   <header>
-  <p>
-    {{ with .Site.Params.header }}
     {{ . | markdownify }}
-    {{ end }}  
-  </p>
   </header>
+  {{ end }}  
